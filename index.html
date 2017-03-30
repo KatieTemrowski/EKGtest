@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+    <div id="theDiv">
+    <p>This is a demo page.</p>
+    </div>
+    <div >
+    <img class="imagez" id="alive1" width="720" height="480" src="../gifsite/alive.gif" />
+    <img class="imagez" id="live2dead3" width="720" height="480" src="../gifsite/live2dead.gif" />
+    <img class="imagez" id="flatline2" width="720" height="480" src="../gifsite/flatline.gif" />
+    <img class="imagez" id="back2life4" width="720" height="480" src="../gifsite/back2life.gif" />
+    </div>
+  </body>
+
+
+
+<script type="text/javascript">
+var Div = window.document.getElementById("theDiv");
+
+document.getElementById("back2life4").style.visibility = 'hidden';
+document.getElementById("live2dead3").style.visibility = 'hidden';
+document.getElementById("flatline2").style.visibility = 'hidden';
+
+
+function gifStuff1() {
+    document.getElementById("alive1").style.display = 'none';
+    Div.innerHTML += "alive -> live2dead || ";
+    document.getElementById("live2dead3").style.visibility = 'visible';
+}
+function gifStuff2() {
+    document.getElementById("live2dead3").style.display = 'none';
+    Div.innerHTML += "live2dead ->flatline || ";
+    document.getElementById("flatline2").style.visibility = 'visible';
+}
+function gifStuff3() {
+    document.getElementById("flatline2").style.display = 'none';
+    Div.innerHTML += "flatline -> live || ";
+    document.getElementById("back2life4").style.visibility = 'visible';
+}
+function gifStuff4() {
+    document.getElementById("back2life4").style.display = 'none';
+    Div.innerHTML += "DONE";
+}
+
+
+
+
+
+console.log(window.document);
+function whenPageLoadsDoThis() {
+	window.setTimeout(gifStuff1, 3000)
+	window.setTimeout(gifStuff2, 6000)
+	window.setTimeout(gifStuff3, 9000)
+	window.setTimeout(gifStuff4, 12000)
+
+
+			}
+
+		window.addEventListener('load', whenPageLoadsDoThis);
+</script>
+
+
+
+</html>
