@@ -12,15 +12,13 @@
   </head>
 
   <body>
-    <h1>Hello World</h1>
     <div id="theDiv">
-    <p>This is a demo page.</p>
+    <h1>This is a demo page.</h1>
     </div>
     <div >
-    <img class="imagez" id="alive1" width="720" height="480" src="./alive.gif" />
-    <img class="imagez" id="live2dead3" width="720" height="480" src="./live2dead.gif" />
-    <img class="imagez" id="flatline2" width="720" height="480" src="./flatline.gif" />
-    <img class="imagez" id="back2life4" width="720" height="480" src="./back2life.gif" />
+    <img class="imagez" id="flatline2" width="720" height="480" src="../gifsite/flatline.gif" />
+    <img class="imagez" id="alive1" width="720" height="480" src="../gifsite/alive.gif" />
+    <img class="imagez" id="live2dead3" width="720" height="480" src="../gifsite/live2dead.gif" />
     </div>
   </body>
 
@@ -29,29 +27,27 @@
 <script type="text/javascript">
 var Div = window.document.getElementById("theDiv");
 
-document.getElementById("back2life4").style.visibility = 'hidden';
 document.getElementById("live2dead3").style.visibility = 'hidden';
-document.getElementById("flatline2").style.visibility = 'hidden';
-
+document.getElementById("alive1").style.visibility = 'hidden';
 
 function gifStuff1() {
+    document.getElementById("flatline2").style.display = 'none';
+    Div.innerHTML += "dead to alive ";
+    document.getElementById("alive1").style.visibility = 'visible';
+}
+// function gifStuff2() {
+//     document.getElementById("back2life4").style.display = 'none';
+//     Div.innerHTML += "revive ->alive || ";
+//     document.getElementById("alive1").style.visibility = 'visible';
+// }
+function gifStuff3() {
     document.getElementById("alive1").style.display = 'none';
-    Div.innerHTML += "alive -> live2dead || ";
+    Div.innerHTML += " & alive to flat again ";
     document.getElementById("live2dead3").style.visibility = 'visible';
 }
-function gifStuff2() {
-    document.getElementById("live2dead3").style.display = 'none';
-    Div.innerHTML += "live2dead ->flatline || ";
-    document.getElementById("flatline2").style.visibility = 'visible';
-}
-function gifStuff3() {
-    document.getElementById("flatline2").style.display = 'none';
-    Div.innerHTML += "flatline -> live || ";
-    document.getElementById("back2life4").style.visibility = 'visible';
-}
 function gifStuff4() {
-    document.getElementById("back2life4").style.display = 'none';
-    Div.innerHTML += "DONE";
+    document.getElementById("live2dead3").style.display = 'none';
+    Div.innerHTML += " && DONE";
 }
 
 
@@ -60,15 +56,15 @@ function gifStuff4() {
 
 console.log(window.document);
 function whenPageLoadsDoThis() {
-	window.setTimeout(gifStuff1, 3000)
-	window.setTimeout(gifStuff2, 6000)
-	window.setTimeout(gifStuff3, 9000)
-	window.setTimeout(gifStuff4, 12000)
+    window.setTimeout(gifStuff1, 7000)
+    // window.setTimeout(gifStuff2, 9000)
+    window.setTimeout(gifStuff3, 14000)
+    window.setTimeout(gifStuff4, 16000)
 
 
-			}
+            }
 
-		window.addEventListener('load', whenPageLoadsDoThis);
+        window.addEventListener('load', whenPageLoadsDoThis);
 </script>
 
 
